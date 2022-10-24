@@ -1,0 +1,198 @@
+.events {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+}
+.events .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+    gap: 40px;
+}
+@media(max-width:767px) {
+    .events .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+        gap: 40px;
+    }
+}
+.events .container .image-events {
+    max-width: 100%;
+}
+.events .container .image-events img {
+    max-width: 100%;
+}
+@media(max-width:767px) {
+    .events .container .image-events {
+      display: none;
+    }
+}
+@media(max-width:991px) {
+    .events .container .image-events {
+      display: none;
+    }
+    .events .main-header {
+        margin-right: 52px;
+    }
+}
+.events .container .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.events .container .box .counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+@media(max-width:767px) {
+    
+    .events .container .box .counter {
+        margin-left: auto;
+    }
+}
+.events .container .box .counter .count {
+    padding: 5px 10px 5px 10px;
+    border: 2px solid #D4D4D4;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    position: relative;
+    min-width: 60px;
+    transition: 0.4s;
+
+}
+.events .container .box .counter .count::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #D4D4D4;
+    top: 63%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: 0.4s;
+
+}
+.events .container .box .counter .count:hover {
+ border-color: var(--main-color);
+ }
+ .events .container .box .counter .count:hover::before  {
+     background-color:var(--main-color);
+ }
+.events .container .box .counter .count h2 {
+    font-size: 25px;
+    color: var(--main-color);
+}
+@media(max-width:767px) {
+    
+    .events .container .box .counter .count h2 {
+        margin-left: auto;
+    }
+}
+.events .container .box .counter .count span {
+    padding: 10px 3px 0px;
+    color: #777;
+    font-size: 13px;
+}
+
+.events .container .box h3 {
+    font-size: 26px;
+}
+
+.events .container .box p {
+    color: #777;
+    line-height: 1.6;
+    font-size: 18px;
+    text-align: center;
+}
+@media(max-width:767px) {
+    .events .container .box h3 {
+            margin-left: auto;
+        }
+        .events .container .box p {
+            margin-left: 40px;
+            width: 100%;
+            font-size: 13px;
+        }
+    }
+.events .container .form {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+}
+.events .container .form form {
+    margin: auto;
+    width: fit-content;
+    background-color: #f6f5f5;
+    padding: 25px 61px;
+    border-radius: 50px;
+    border: 1px solid white;
+}
+@media(max-width:767px) {
+    .events .container .form form {
+    border-radius: 0;
+    }
+}
+.events .container .form form input[type="email"] {
+    padding: 10px 258px 10px 10px;
+    border-radius: 30px;
+    border: none;
+}
+
+
+.events .container .form form input[type="email"]:focus {
+    outline: none;
+} 
+@media(max-width:767px) {
+    .events .container .form form input[type="email"]:focus {
+        border-radius: 0;
+    }
+}
+@media(max-width:767px) {
+    .events .container .form form input[type="email"] {
+        padding: 10px 15px;
+        border-radius: 30px;
+        border: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.events .container .form form input[type="submit"] {
+    margin-left: 20px;
+    border-radius: 50px;
+    padding: 11px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: var(--main-color);
+}
+@media(max-width:767px) {
+    .events .container .form form input[type="submit"] {
+        border-radius: 0;
+        border: none;
+        width: 100%;
+        margin:auto;
+    }
+    .events .main-header {
+        margin: auto;
+    }
+    .events .container .form form input[type="email"] {
+        border-radius: 0;
+    }
+   
+}
+.events .container .form form input::placeholder {
+  font-size: 17px;
+  text-align: left;
+  color:#777;
+  transition: opacity 0.4s;
+}
+.events .container .form form input[type="email"]:focus::placeholder {
+    opacity: 0;
+}

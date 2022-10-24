@@ -1,0 +1,91 @@
+.services {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    background-color: #ececec;
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 30px;
+}
+.services .container .box {
+    counter-increment: services;
+    background-color: white ;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+    /* padding: 50px 20px; */
+    position: relative;
+    transition: 0.4s;
+}
+.services .container .box::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 0;
+ height: 3px;
+ background-color: var(--main-color);
+}
+
+.services .container .box:hover::before {
+ width: 100%;
+}
+.services .container .box:hover {
+ transform: translateY(-10px);
+}
+
+.services .container .box > i { 
+    font-size: 50px;
+    text-align: center;
+    margin: 14px 0 5px 0;
+    display: block;
+    color: #777;
+    padding: 25px 0 7px 0;
+}
+.services .container .box > h3 { 
+    text-align: center;
+    color: var(--main-color);
+    font-size: 27px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+.services .container .box .info { 
+    background-color: #ececec;
+    padding: 20px 10px;
+    text-align: right;
+    font-weight: 500;
+    position: relative;
+}
+.services .container .box .info::before { 
+    content: '0'counter(services);
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    background-color: var(--main-color);
+    top: 0;
+    left: 0;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-right: 10px;
+    font-weight: bold;
+
+}
+.services .container .box .info::after { 
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: calc(100% + 0.6px);
+    background-color: #D5D5D5;
+    top: 0;
+    left: calc(0px + 63px);
+    transform: skewX(-30deg);
+
+}
+.services .container .box .info a { 
+    color: var(--main-color);
+}
+

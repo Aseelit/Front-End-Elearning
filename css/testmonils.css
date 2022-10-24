@@ -1,0 +1,54 @@
+
+.testmonils {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    background-color: #ececec;
+}
+.testmonils .container {
+ display: grid;
+ grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+ gap: 30px;
+}
+.testmonils .container .box {
+    position: relative;
+    background-color: white;
+    padding: 20px 30px;
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+    border-radius: 6px;
+
+}
+.testmonils .container .box img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: absolute;
+    top: -22px;
+    border: 5px solid #ececec;
+    right: -7px;
+}
+.testmonils .container .box .name {
+    font-size: 22px;
+    text-align: left;
+    margin: 0px;
+    font-weight: bold;
+}
+.testmonils .container .box .title {
+      color: #777;
+    font-size: 17px;
+    margin: 10px 0;
+    display: block;
+}
+
+.testmonils .container .box .rate .filled {
+    color: #e9e90a;
+}
+.testmonils .container .box .rate .not-filled {
+  
+}
+.testmonils .container .box p {
+    margin-top: 10px;
+    color: #777;
+    font-size: 17px;
+    line-height: 1.5;
+}

@@ -1,0 +1,156 @@
+.features {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    background-color: white;
+}
+.features .container {
+    display: grid;
+ grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+ gap: 30px;
+}
+.features .container .box {
+ box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+ overflow: hidden;
+}
+.features .container .box .image-hover {
+    position: relative;
+    transition: 0.5s;
+    /* transform: skewy(-10deg); */
+    /* transform-origin: top left; */
+    /* border-bottom: 1px solid transparent; */
+    /* transition: 0.3s; */
+}
+.features .container .box .image-hover::before {
+    content: '';
+    position: absolute;
+    border-width: 0px 0px 130px 381px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+}
+.features .container .box .image-hover::after {
+    content: '';
+    position: absolute;
+    background-color: #ff00000a;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.features .container .box .image-hover:hover::before {
+    border-width: 0px 500px 170px 0px;
+    border-color: transparent transparent white transparent ;
+}
+
+.features .container .box:first-of-type > .image-hover::after {
+    background-color: rgb(255 0 0 / 20%);
+}
+.features .container .box:not(:first-of-type) > .image-hover::after {
+    background-color: rgb(0 128 0 / 20%);
+}
+.features .container .box:last-of-type > .image-hover::after {
+    background-color: rgb(33 150 243 / 20%);
+}
+
+.features .container .box h2 {
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
+}
+.features .container .box h2::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    bottom: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 5px;
+}
+.features .container .box:first-of-type > h2::before {
+    background-color: #f44036;
+}
+.features .container .box:not(:first-of-type) > h2::before {
+    background-color: green;
+}
+.features .container .box:last-of-type > h2::before {
+    background-color: var(--main-color);
+}
+.features .container .box p {
+    padding: 20px;
+    color: #777;
+    text-align: center;
+    line-height: 1.6;
+    width: 330px;
+}
+.features .container .box .image-hover img {
+    max-width:100%;
+    z-index: 2;
+}
+.features .container .box button {
+    position: relative;
+    padding: 10px 20px;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-bottom: 30px;
+    background-color: white;
+    font-weight: bold;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.features .container .box button::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: -100%;
+    height: 100%;
+}
+
+.features .container .box:not(:last-of-type) > button::before {
+    background-color: green;
+}
+.features .container .box:first-of-type > button::before {
+    background-color: #f44036;
+}
+.features .container .box:last-of-type > button::before {
+    background-color: var(--main-color);
+}
+
+
+.features .container .box:not(:last-of-type) > button {
+    border: 2px solid green;
+    color: green;
+}
+.features .container .box:first-of-type > button {
+    border: 2px solid #f44036;
+    color: #f44036;
+}
+.features .container .box:last-of-type > button {
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+
+.features .container .box button:hover {
+    transition-delay: 0.2s;
+    color: white;
+}
+.features .container .box button:hover::before {
+    z-index: -1;
+ animation:fill-btn 0.9s ease-out forwards ;
+}
+
+@keyframes fill-btn {
+  
+    100% {
+        left:0;
+        width: 100%;
+    }
+}

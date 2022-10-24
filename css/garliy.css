@@ -1,0 +1,54 @@
+.garliy {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    background-color: #ececec;
+}
+.garliy .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.garliy .box {
+    background-color: white;
+    padding: 15px;
+}
+.garliy .box .image {
+    position: relative;
+    overflow: hidden;
+}
+.garliy .box .image::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: rgb(243 237 237 / 20%);
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%) ;
+    translate: 0.3s;
+    z-index: 2;
+}
+.garliy .box .image:hover::before { 
+   animation: flashing 1.7s infinite;
+
+}
+.garliy .box .image img {
+   max-width: 100%;
+   transition: 0.5s;
+
+  /* width: 300px; */
+}
+.garliy .box .image:hover img {
+ transform: rotate(5deg) scale(1.1);
+}
+@keyframes flashing {
+    0%,40%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        width: 200%;
+        height: 200%;
+    }
+}

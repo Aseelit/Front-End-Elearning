@@ -1,0 +1,76 @@
+.state {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative;
+    background-color: #ececec;
+}
+.state  h2 {
+ text-align: center;
+ font-size: 30px;
+ padding: 30px 0;
+}
+
+.state .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.state .container .box {
+    background-color: white;
+    box-shadow: 0px 1px 6px rgb(0 0 0 / 20%);
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    min-width: 250px;
+    border-radius: 6px;
+    position: relative;
+    opacity: 0.8;
+}
+@media(max-width:767px) {
+    .state .container .box {
+        min-width: 300px;
+    }
+}
+.state .container .box::before,.state .container .box::after {
+   position: absolute;
+   width: 5px;
+   height: 0;
+   background-color: var(--main-color);
+   transition: 0.9s;
+}
+.state .container .box::after {
+    content: '';
+    left: 0;
+    bottom: 0;
+}
+.state .container .box::before {
+    content: '';
+    right: 0;
+    top: 0;
+}
+.state .container .box:hover::before,.state .container .box:hover::after {
+    height: 100%;
+}
+.state .container .box:hover {
+    opacity: 1;
+}
+
+.state .container .box i {
+    font-size: 26px;
+}
+.state .container .box .price {
+    font-size: 30px;
+    font-weight: bold;
+}
+.state .container .box .product {
+    font-size: 14px;
+    color: var(--main-color);
+    font-weight: bold;
+    font-style: italic;
+}
